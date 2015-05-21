@@ -1,0 +1,313 @@
+  [1m[36m (14.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (24.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFavoritos (20150521013322)
+  [1m[35m (13.1ms)[0m  CREATE TABLE `favoritos` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150521013322')
+  [1m[36m (6.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'favoritos'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `favoritos`
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsuarios (20150521013940)
+  [1m[35m (30.2ms)[0m  CREATE TABLE `usuarios` (`id` int(11) auto_increment PRIMARY KEY, `codUsu` varchar(255), `nombreUsu` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150521013940')
+  [1m[36m (77.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'favoritos'
+[0m
+  [1m[35m (0.6ms)[0m  SHOW CREATE TABLE `favoritos`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `usuarios`
+
+
+Started GET "/" for 200.0.118.173 at 2015-05-21 01:46:47 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 28ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.0.118.173 at 2015-05-21 01:46:59 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios" for 200.0.118.173 at 2015-05-21 01:47:21 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (1.5ms)[0m  SELECT `usuarios`.* FROM `usuarios`
+  Rendered usuarios/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 1524ms (Views: 1511.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/favoritos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-ade00adcde1249df4241695c2aae67a1990b158fa2c1ae5aedad5425292b1a62.css?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 200.0.118.173 at 2015-05-21 01:47:23 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/favoritos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 200.0.118.173 at 2015-05-21 01:47:24 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 200.0.118.173 at 2015-05-21 01:47:24 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 200.0.118.173 at 2015-05-21 01:47:24 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/usuarios/new" for 200.0.118.173 at 2015-05-21 01:47:27 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.erb (41.6ms)
+  Rendered usuarios/new.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 125ms (Views: 113.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/usuarios" for 200.0.118.173 at 2015-05-21 01:47:41 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZqfHMSHgWymp4G+P+io01oGRTsMRf0xRnGCH27PH3p/3nz11slFyetP9O6U4aADFzkNApQZHsF0tDtvhmsE5mQ==", "usuario"=>{"codUsu"=>"001", "nombreUsu"=>"Lisseth"}, "commit"=>"Create Usuario"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `usuarios` (`codUsu`, `nombreUsu`, `created_at`, `updated_at`) VALUES ('001', 'Lisseth', '2015-05-21 01:47:41', '2015-05-21 01:47:41')
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+Redirected to https://examen2005-funeslisseth.c9.io/usuarios/1
+Completed 302 Found in 27ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/usuarios/1" for 200.0.118.173 at 2015-05-21 01:47:41 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (1.1ms)[0m  SELECT  `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 1 LIMIT 1
+  Rendered usuarios/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 164ms (Views: 142.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuarios/1/edit" for 200.0.118.173 at 2015-05-21 01:47:45 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1mSELECT  `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 1 LIMIT 1[0m
+  Rendered usuarios/_form.html.erb (3.0ms)
+  Rendered usuarios/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 84ms (Views: 81.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuarios" for 200.0.118.173 at 2015-05-21 01:47:48 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT `usuarios`.* FROM `usuarios`
+  Rendered usuarios/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuarios/new" for 200.0.118.173 at 2015-05-21 01:47:49 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.erb (2.4ms)
+  Rendered usuarios/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 93ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios" for 200.0.118.173 at 2015-05-21 01:47:59 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jnsVuN+R6E5S7ydTzzTkB0NWUa6iB3m9GzuIR5oGQlIfQ+/8TCDBHSjyc3kNdtAUDIRfyLU/hbGqVdR9swClVA==", "usuario"=>{"codUsu"=>"002", "nombreUsu"=>"Juan"}, "commit"=>"Create Usuario"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `usuarios` (`codUsu`, `nombreUsu`, `created_at`, `updated_at`) VALUES ('002', 'Juan', '2015-05-21 01:47:59', '2015-05-21 01:47:59')
+  [1m[36m (10.1ms)[0m  [1mCOMMIT[0m
+Redirected to https://examen2005-funeslisseth.c9.io/usuarios/2
+Completed 302 Found in 23ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/usuarios/2" for 200.0.118.173 at 2015-05-21 01:47:59 +0000
+Cannot render console from 200.0.118.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUsuario Load (1.7ms)[0m  SELECT  `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 2 LIMIT 1
+  Rendered usuarios/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 93ms (Views: 88.7ms | ActiveRecord: 1.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'favoritos'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `favoritos`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `usuarios`
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'favoritos'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `favoritos`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `usuarios`
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (1.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'favoritos'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `favoritos`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `usuarios`
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `usuarios`
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsuarios (20150521021204)
+  [1m[35m (25.7ms)[0m  CREATE TABLE `usuarios` (`id` int(11) auto_increment PRIMARY KEY, `codUsu` varchar(255), `nombreUsu` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150521021204')
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `usuarios`
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFavoritos (20150521021415)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFavoritos (20150521021415)
+  [1m[35m (19.9ms)[0m  CREATE TABLE `favoritos` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `usuario_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_favoritos_on_usuario_id`  (`usuario_id`) ) ENGINE=InnoDB
+  [1m[36m (124.1ms)[0m  [1mALTER TABLE `favoritos` ADD CONSTRAINT `fk_rails_f324ad2b25`
+FOREIGN KEY (`usuario_id`)
+  REFERENCES `usuarios` (`id`)
+[0m
+  [1m[35m (1.9ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150521021415')[0m
+  [1m[35m (8.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.8ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'favoritos'
+
+  [1m[36m (0.4ms)[0m  [1mSHOW CREATE TABLE `favoritos`[0m
+  [1m[35m (0.5ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'examen'
+  AND fk.table_name = 'usuarios'
+
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `usuarios`[0m
